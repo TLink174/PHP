@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <script type="text/javascript" src="ckeditor/ckeditor.js"></script>
+    <title>Document</title>
+  </head>
+  <body>
+    <form action="_posteddata.php" method="post">
+      <textarea name="tomtat" cols="" rows=""></textarea>
+      <script type="text/javascript">
+        //<![CDATA[
+
+        // This call can be placed at any point after the
+        // <textarea>, or inside a <head><script> in a
+        // window.onload event handler.
+
+        // Replace the <textarea id="editor"> with an CKEditor
+        // instance, using default configurations.
+        CKEDITOR.replace("tomtat");
+
+        //]]>
+      </script>
+      <input name="ok" type="submit" value="Ok" />
+    </form>
+  </body>
+</html>
