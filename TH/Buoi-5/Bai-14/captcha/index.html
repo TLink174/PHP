@@ -1,0 +1,76 @@
+<html>
+<head>
+<title>Create Captcha</title>
+<meta charset='UTF-8'>
+<link rel="stylesheet" type="text/css" href="css/style.css">
+</head>
+<body>
+<div id="background">
+<!--create form-->
+<div id="create-form">
+<div id="form">
+<form action ="index.php" method="post">
+<div id="noidung">
+<div class="label-tua">
+<h2> XÁC NHẬN TÀI KHOẢN</h2>
+</div>
+<div class="label">
+      <label class="name-tua">Username</label> 
+      <label class="past-tua">
+      <input type="text" name="user" placeholder="Username" />
+      </label>
+</div>
+<div class="label">
+      <label class="name-tua">Password</label>
+      <label class="past-tua">
+      <input type="password" name="pass" placeholder="Password"/>
+      </label>
+</div>
+<div class="label">
+    <label class="name-tua">Xác nhận mã</label>
+    <label class="past-tua">
+    <img src="include/img_captcha.php" />
+    </br>
+    <input text="text" name='ma_captcha' placeholder="Xác nhận mã" />
+    </label>
+</div>
+<div class="label">
+    <label>
+      <input type="submit" name="xacnhan" value="Xác nhận" />
+    </label>
+</div>
+</div><!--end noidung-->
+</form><!--ket thuc form-->
+<div class="label">
+    <label>
+    <?php
+    $kq=new Captcha();
+    echo $kq->xacnhan();
+    //echo '<script>alert('.$kq->xacnhan().');</script>';
+ 
+    ?>
+    </label>
+</div>
+</div><!--End form-->
+</div>
+</div><!--End Background-->
+</body>
+<style>
+    /*
+Author:Nguyễn Thanh Hòa;
+Contact:nguyenthanhhoa.com@gmail.com;
+Date: 26-9-2014;
+Version: 2;
+*/
+*{margin:0px;padding:0px;}
+#background{width:900px;margin: 0px auto;}
+#create-form{width: 900px;margin: 50px auto;}
+#form{width: 900px;margin: 0px auto;}
+#noidung div{padding:5px 0px;margin-left: 280px;width: 400px;width: 400px;border:1px solid #ccc;border-top-style: none;}
+div.label-tua{background: #000000;}
+div.label-tua h2{width: 400px;text-align: center;color:blue;color:white;padding:10px 0px;}
+div.label label{width:400px;padding:2px;display: inline-block;font-style: italic;font-size: 18px;font-weight: bold;margin-left: 100px;border-bottom-style: none;}
+div.label label input{width: 200px;padding:5px 5px;font-style: italic;text-align: center;font-size: 16px;}
+
+</style>
+</html>
